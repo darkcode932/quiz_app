@@ -4,9 +4,6 @@ class Answer extends StatelessWidget {
   final VoidCallback selectHandler;
   final String answerText;
 
-  final ButtonStyle style = ElevatedButton.styleFrom(
-      textStyle: const TextStyle(fontSize: 14, color: Colors.black));
-
   Answer(this.selectHandler, this.answerText);
 
   @override
@@ -14,7 +11,8 @@ class Answer extends StatelessWidget {
     return Container(
       width: double.infinity,
       child: ElevatedButton(
-        style: style,
+        style: ElevatedButton.styleFrom(
+            primary: Colors.black, onPrimary: Colors.orange),
         onPressed: selectHandler,
         child: Text(answerText),
       ),
